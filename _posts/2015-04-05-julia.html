@@ -1,0 +1,9 @@
+---
+permalink: /julia
+---
+
+{% for page in site.posts %}
+    {% if page.dir contains 'julia' %}
+        <h1> {{page.permalink}} </h1>
+    {% endif %}
+{% endfor %}
