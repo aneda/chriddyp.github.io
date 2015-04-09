@@ -1,5 +1,2 @@
-collections:
-- templated_examples
-
 gems:
 - octopress-debugger
