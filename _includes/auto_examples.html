@@ -16,9 +16,12 @@
             </div>
 
             <div class="col s12 m12 l6">
-                <div style="height: 550px;">
+                <div >
+                    <iframe src="{{ example.plot_url }}" style="width: 100%; height: 550px; border: none;"></iframe>
+                    <!--
                     <a href="{{ example.plot_url }}" target="_blank" title="" style="display: block; text-align: center;"><img src="{{ example.plot_url }}.png" alt="" style="max-width: 100%;width: 500px;"  width="500" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
                     <script data-plotly="{{ example.plot_url | replace:'https://plot.ly/~',''}}" src="https://plot.ly/embed.js" async></script>
+                    -->
                 </div>
             </div>
 
