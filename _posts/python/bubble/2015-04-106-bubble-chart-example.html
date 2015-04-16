@@ -1,0 +1,46 @@
+---
+name: Bubble chart example
+plot_url: https://plot.ly/~neda/70/stores-annual-sales/
+language: python
+description: How to make a bubble chart that presents the annual stroes sales while presents each stores market share.
+suite: bubble
+order: 3
+---
+
+import plotly.plotly as py
+from plotly.graph_objs import *
+
+age_store = [1, 1.5, 2, 3]
+sales = [50500, 39780, 55000, 44990]
+market_share = [18, 24, 37, 14]  # market share based on percentage
+text = ['Store A: %18 market share ', 'Store B: %24 market share', 
+        'Store C: %37 market share', 'Store D: %14 maket share']
+
+trace1 = Scatter(
+    x = age_store,
+    y = sales,
+    text = text,
+    name = market_share,
+    mode = 'markers',
+    marker = Marker(
+        color =['Green', 'Blue', 'Yellow', 'Jet'],
+        size = market_share,
+        sizeref = 0.5,
+        sizemode = 'diameter',
+    )
+)
+
+data = Data([trace1])
+
+layout = Layout(
+    title='Stores Annual Sales',
+    xaxis=XAxis(
+        title='Age of Store'
+    ),
+    yaxis=YAxis(
+        title='Sales'
+    )
+)
+
+fig = Figure(data=data,  layout=layout)
+plot_url = py.plot(fig, filename='bubblechart')
