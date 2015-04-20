@@ -1,0 +1,70 @@
+---
+name: 3D Stacked Histogram
+plot_url: https://plot.ly/~neda/419/_3d-stacked-histogram/
+language: python
+suite: 3d-surface
+order: 1
+---
+
+# Learn about API authentication here: https://plot.ly/python/getting-started
+# Find your api_key here: https://plot.ly/settings/api
+
+import plotly.plotly as py
+from plotly.graph_objs import *
+
+trace1 = Scatter3d(
+    x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    y = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5],
+    z = [22, 20, 19, 21, 22, 21, 8, 9, 9, 9, 8, 7, 5, 6, 5, 4, 3],   #7, 12, 4, 18
+    mode = 'lines',
+    line=Line(
+        color='Purpule',
+        width=3
+    )   
+)
+
+trace2 = Scatter3d(
+    x = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+    y = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5],
+    z = [22, 20, 19, 21, 22, 21, 8, 9, 9, 9, 8, 7, 5, 6, 5, 4, 3],   #7, 12, 4, 18
+    mode = 'lines',
+    line=Line(
+        color='Red',
+        width=3,
+    )   
+)
+
+trace3 = Scatter3d(
+    x = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    y = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5],
+    z = [22, 20, 19, 21, 22, 21, 8, 9, 9, 9, 8, 7, 5, 6, 5, 4, 3], 
+    mode = 'lines',
+    line=Line(
+        color='Gray',
+        width=3
+    )   
+)
+
+trace4 = Scatter3d(
+    x = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+    y = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5],
+    z = [22, 20, 19, 21, 22, 21, 8, 9, 9, 9, 8, 7, 5, 6, 5, 4, 3],   
+    mode = 'lines',
+    line=Line(
+        color='Green',
+        width=3
+    )   
+)
+data = Data([trace1, trace2, trace3, trace4])
+
+layout = Layout(
+        title='3d Stacked Histogram',
+        autosize=False,
+        width=600,
+        height=600,
+       
+)
+
+
+fig = Figure(data=data, layout=layout)
+plot_url = py.plot(fig, filename='3d-stacked-hist')
